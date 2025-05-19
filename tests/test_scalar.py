@@ -59,6 +59,7 @@ def test_simple(a: float, b: float) -> None:
 
     # Simple mul
     c = Scalar(a) * Scalar(b)
+    print(c)
     assert_close(c.data, a * b)
 
     # Simple relu
