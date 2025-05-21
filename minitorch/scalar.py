@@ -164,7 +164,6 @@ class Scalar:
 
         der = h.last_fn.backward(h.ctx, d_output)
         
-        print(h.inputs, der)
         return zip(h.inputs, der)
 
     def backward(self, d_output: Optional[float] = None) -> None:

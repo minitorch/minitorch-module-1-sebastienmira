@@ -160,7 +160,7 @@ def sigmoid(x: float) -> float:
         f(x)
 
     """
-    return 1.0 / (1.0 + math.exp(-x))
+    return math.exp(x) / (1.0 + math.exp(x))
 
 
 # - relu
@@ -293,7 +293,8 @@ def sigmoid_back(x: float, y: float) -> float:
     -------
         f'(x) * y
     """
-    return math.exp(-x) / (1 + math.exp(-x))**2
+    s = sigmoid(x)
+    return y * s * (1-s)
 
 
 #
